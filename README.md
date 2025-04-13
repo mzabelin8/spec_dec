@@ -1,10 +1,11 @@
 # Speculative Decoding
 
+This project demonstrates speculative decoding - a technique to accelerate language model inference.
+
+The basic process:
 1. Using a smaller "draft" model to quickly predict N potential tokens
 2. Verifying these predictions using the larger "target" model
-3. Accepting all correct predictions and rejecting+regenerating when a mismatch occurs
-
-
+3. Accepting correct predictions and regenerating when a mismatch occurs
 
 ## Project Structure
 
@@ -19,10 +20,6 @@
   - `n_effect.png` - Graph showing effect of N parameter (speculative tokens)
   - `acceptance_rate.png` - Graph showing token acceptance rate vs. N
   - `speedup.png` - Graph showing speedup factor vs. N
-
-## Usage
-
-Run experiments using the default models:
 
 ## How to Run
 
@@ -50,7 +47,7 @@ The experiments conducted in this project evaluate speculative decoding across t
 2. **Maximum Tokens**: Effect of varying the number of tokens to generate
 3. **Speculation Depth**: Effect of varying N (number of speculative tokens)
 
-For each experiment measure:
+For each experiment I measure:
 - Generation time
 - Acceptance rate of speculative tokens
 - Speedup compared to standard generation
